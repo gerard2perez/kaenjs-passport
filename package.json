@@ -1,0 +1,41 @@
+{
+  "name": "@kaenjs/passport",
+  "version": "0.0.0",
+  "description": "Passport Middleware for KaenJS",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "keywords": [
+    "Passport",
+    "Session",
+    "Middleware",
+    "KaenJS",
+    "Framework",
+    "kaen",
+    "backend",
+    "webserver",
+    "nodejs"
+  ],
+  "author": "Gerardo Pérez Pérez <gerard2perez@outlook.com>",
+  "license": "AGPL-3.0",
+  "devDependencies": {
+    "@kaenjs/core": "file:../core",
+    "@types/node": "^10.0.0",
+    "typescript": "^3.4.3"
+  },
+  "dependencies": {
+    "bcrypt": "^3.0.5",
+    "express-session": "^1.15.6",
+    "passport": "^0.4.0"
+  },
+  "engines": {
+    "node": ">=10.0.0"
+  },
+  "files": [
+    "**/*.js",
+    "package.json",
+    "**/*.d.ts"
+  ],
+  "readme": "README.md"
+}
