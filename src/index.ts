@@ -1,10 +1,8 @@
-import { configuration } from '@kaenjs/core/configuration';
 import { KaenContext } from '@kaenjs/core';
-import { hash } from './hash';
-import { targetPathNoSrc } from '@kaenjs/core/utils';
-import * as _passport from 'passport';
+import { configuration } from '@kaenjs/core/configuration';
 import * as _session from 'express-session';
-import { resolve } from 'dns';
+import * as _passport from 'passport';
+import { hash } from './hash';
 declare global {
 	namespace KaenExtensible {
 		interface KaenContext {
