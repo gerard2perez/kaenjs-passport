@@ -1,5 +1,5 @@
-import * as _passport from 'passport';
 import { KaenContext } from '@kaenjs/core';
+import * as _passport from 'passport';
 import { Mock } from './mock';
 export function authenticate(strategy: string, options: any={}) {
 	let data = Object.assign({}, {assignProperty:'user'}, options );

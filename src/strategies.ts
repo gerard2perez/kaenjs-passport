@@ -1,5 +1,5 @@
-import * as _passport from 'passport';
 import { configuration } from '@kaenjs/core/configuration';
+import * as _passport from 'passport';
 const { authentication: { Strategies } } = configuration;
 /** register the strategies to passport */
 for (const { Strategy, Options, Auth } of Strategies) {
