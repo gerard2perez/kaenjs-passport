@@ -1,6 +1,7 @@
 import { configuration } from '@kaenjs/core/configuration';
 import { hash } from './hash';
-const { authentication: { UsernameKey, PassowrdKey, Model, SaltRounds, Keys, Session } } = configuration;
+import { PassportConfiguration } from './configuration';
+const { UsernameKey, PassowrdKey, Model } = configuration.passport as PassportConfiguration;
 export async function RegisterUser(username: string, password: string, data: any) {
 	const payload = Object.assign({}, data, {
 		[PassowrdKey]: await hash(password)

@@ -1,6 +1,7 @@
 import { configuration } from '@kaenjs/core/configuration';
 import * as _passport from 'passport';
-const { authentication: { UsernameKey, PassowrdKey, Strategies, Model, SaltRounds, Keys, Session } } = configuration;
+import { PassportConfiguration } from './configuration';
+const { UsernameKey, PassowrdKey, Strategies, Model, SaltRounds } = configuration.passport as PassportConfiguration;
 
 _passport.serializeUser(function (user: any, done) {
 	console.log('serialize');

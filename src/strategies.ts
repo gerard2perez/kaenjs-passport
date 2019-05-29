@@ -1,6 +1,7 @@
 import { configuration } from '@kaenjs/core/configuration';
 import * as _passport from 'passport';
-const { authentication: { Strategies } } = configuration;
+import { PassportConfiguration } from './configuration';
+const { Strategies } = configuration.passport as PassportConfiguration;
 /** register the strategies to passport */
 for (const { Strategy, Options, Auth } of Strategies) {
 	let args = [Options, Auth].filter(f => f);

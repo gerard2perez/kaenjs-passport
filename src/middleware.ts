@@ -1,21 +1,6 @@
 import { KaenContext } from '@kaenjs/core';
-import { configuration } from '@kaenjs/core/configuration';
-import * as _session from 'express-session';
 import * as _passport from 'passport';
 import { Mock } from './mock';
-
-const { authentication: { Keys, Session } } = configuration;
-
-function _Session() {
-	let options = Object.assign({}, {secret:Keys}, Session);
-	let session = _session(options);
-	return async function (ctx: KaenContext) {
-		await new Promise(resolve => {
-			//@ts-ignore
-			session(ctx.req, ctx.res, resolve);
-		});
-	};
-}
 function Passport(router?:any) {
 	if(router)router.addMatchCondition((r,c)=>{
 		let auth = !r.isProtected || (r.isProtected && c.isLogged);
@@ -66,4 +51,4 @@ function Passport(router?:any) {
 		});
 	};
 }
-export { _Session as Session, _passport as PassportInstance, Passport };
+export { _passport as PassportInstance, Passport };
