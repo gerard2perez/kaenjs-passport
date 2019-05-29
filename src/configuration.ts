@@ -1,14 +1,15 @@
 import {Strategy} from 'passport';
-import {SessionOptions} from 'express-session';
 import { Mut } from '@kaenjs/core/configuration/helpers';
 
 interface IStrategy {
 	Strategy:Strategy
-	Options:SessionOptions,
+	Options:any,
 	Auth:any
 }
 export interface PassportConfiguration<T=any> {
 	Model:(o?:any) => T
+	serialize?:(user:T)=>Promise<string>
+	deserialize?:(id:string)=>Promise<T>
 	/**
 	 * These values are use to generate cookies
 	 */
@@ -24,4 +25,6 @@ export type IPassportConfiguration<T=any> = {
     SaltRounds: Mut<number>
     Model:Mut<(o?:any) => T>
 	Strategies:Array<IStrategy>
+	serialize?:(user:T)=>Promise<string>
+	deserialize?:(id:string)=>Promise<T>
 }
