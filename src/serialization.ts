@@ -9,7 +9,7 @@ const { serialize, deserialize, UsernameKey, PassowrdKey, Strategies, Model, Sal
 
 function toDone(fn:(...args:any[])=>Promise<any>) {
 	return function(...args:any[]) {
-		let done:(a:any,b:any)=>void = args.splice(-1) as any;
+		let done:(a:any,b:any)=>void = args.splice(-1)[0] as any;
 		fn(...args).then((res:any)=>{
 			done(null,res);
 		}).catch(err=>{
