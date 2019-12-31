@@ -16,7 +16,7 @@ export interface PassportConfiguration<T=any> {
 	UsernameKey:string
 	PassowrdKey:string
 	SaltRounds: number
-	Strategies:Array<IStrategy>
+	Strategies:IStrategy[]
 
 }
 export type IPassportConfiguration<T=any> = {
